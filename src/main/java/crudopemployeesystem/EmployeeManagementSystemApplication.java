@@ -5,8 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
+import crudopemployeesystem.entity.Department;
 import crudopemployeesystem.entity.Employee;
+import crudopemployeesystem.repository.DepartmentRepository;
 import crudopemployeesystem.repository.EmployeeRepository;
 
 @SpringBootApplication
@@ -17,6 +18,8 @@ public class EmployeeManagementSystemApplication implements CommandLineRunner{
 	}
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	@Autowired
+	private DepartmentRepository departmentRepository;
 	@Override
 	public void run(String... args) throws Exception{
 		
@@ -32,7 +35,13 @@ public class EmployeeManagementSystemApplication implements CommandLineRunner{
 		 Employee employee3 = new Employee("Geethika", "geethika@gmail.com" );
 		 employeeRepository.save(employee3);
     */
+		 Department department1 = new Department(101, "HR");
+		    departmentRepository.save(department1);
+
+		    Department department2 = new Department(102,"IT");
+		    departmentRepository.save(department2);
 		
 	}
+	
 
 }
