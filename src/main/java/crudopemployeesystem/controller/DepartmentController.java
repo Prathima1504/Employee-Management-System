@@ -5,9 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import crudopemployeesystem.entity.Department;
 import crudopemployeesystem.service.DepartmentService;
+import jakarta.validation.Valid;
 
 
 @Controller
@@ -20,7 +22,7 @@ public class DepartmentController {
 		this.departmentService = departmentService;
 	}
 	
-	// handler method to handle list of students and return model and view
+	// handler method to handle list of departments and return model and view
 	
 		@GetMapping("/departments")
 		public String listDepartments(Model model)
@@ -38,13 +40,13 @@ public class DepartmentController {
 	{
 	   Department department = new Department();
 		
-		model.addAttribute("department", department);
+		model.addAttribute(  "department", department);
 		return "create_department";
 		
 	}
      
 	@PostMapping("/departments")
-	public String saveDepartment(@ModelAttribute("department") Department department )
+	public String saveDepartment(@Valid @RequestBody  @ModelAttribute("department") Department department )
 	{
 		
 		departmentService.saveDepartment(department);

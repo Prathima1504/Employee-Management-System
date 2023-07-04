@@ -2,12 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Departments</title>
+<title>Department Manager</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-	
 	<nav class="navbar navbar-expand-md bg-primary navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="#">Employee Management system</a>
@@ -29,6 +28,7 @@
 <br>
 <br>
 <br>
+
  <div class="container">
 			 <div class="row">
 				 <h1>List of Departments</h1>
@@ -37,20 +37,20 @@
 			 <table class="table table-stripped table-bordered table-hover">
 			     <thead class="table-dark">
 					 <tr>
-						 <th>  ID</th>
-						 <th> Name</th>
-						 <th> Email</th>
+						 <th> Department ID</th>
+						 <th>Employee ID</th>
 					
 					 </tr>
 				 </thead>
 				<tbody>
 					 <tr th:each = "department:${departments}">
-						 <td th:text = "${department.dept_id}"></td>
-						 <td th:text = "${department.dept_name}"></td>		
-						 <td th:text = "${department.email}"></td>				   
-					</tr>
+						  <td th:text = "${department.department_no}"></td>
+						  <td th:text = "${employee.id}"></td>					   	
+					 </tr>
 				 </tbody>
 			 </table>
 		 </div>
+
+
 </body>
 </html>

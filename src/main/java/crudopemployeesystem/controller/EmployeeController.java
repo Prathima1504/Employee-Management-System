@@ -33,7 +33,7 @@ public class EmployeeController
 		
 	}
 	
-	//hAndler method to add employee
+	//handler method to add employee
 	
 	@GetMapping("/employees/new")
 	public String createEmployeeForm(Model model)
@@ -63,7 +63,7 @@ public class EmployeeController
 	public String updateEmployee(@PathVariable Long id, @ModelAttribute("employee") Employee employee, Model model) {
 	   Employee existingEmployee = employeeService.getEmployeeByID(id);
 	   existingEmployee.setId(id);
-	   existingEmployee.setName(employee.getName());
+	   existingEmployee.setFname(employee.getFname());
 	   existingEmployee.setEmail(employee.getEmail());
 	   
 	   //save updated employee object
