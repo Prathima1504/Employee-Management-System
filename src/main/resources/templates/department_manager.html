@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Department Manager</title>
@@ -44,7 +44,7 @@
 				 </thead>
 				<tbody>
 					 <tr th:each = "department:${departments}">
-						  <td th:text = "${department.department_no}"></td>
+						  <td th:text = "${department.dept_no}"></td>
 						  <td th:text = "${employee.id}"></td>					   	
 					 </tr>
 				 </tbody>

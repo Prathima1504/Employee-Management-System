@@ -23,7 +23,7 @@ import jakarta.validation.constraints.Size;
 public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long dept_id;
+	private Long dept_no;
 	
 	@NotBlank(message = "Name is mandatory")
 	@Size(min = 5, message = "user name should have at least 5 characters")
@@ -35,7 +35,7 @@ public class Department {
 	
 	
 	@JoinTable( name = "Department_managers", 
-			    joinColumns = @JoinColumn( name = "department_ID", referencedColumnName = "dept_id" ),
+			    joinColumns = @JoinColumn( name = "department_ID", referencedColumnName = "dept_no" ),
 			    inverseJoinColumns = @JoinColumn( name = "employee_ID", referencedColumnName = "id" ) )
 	
 	
@@ -59,16 +59,16 @@ public class Department {
 
 
 
-	public Long getId()
+	public Long getDept_no()
 	{
-		return dept_id;
+		return dept_no;
 	}
 
 
 
-	public void setId(Long id) 
+	public void setId(Long dept_no) 
 	{
-		this.dept_id= id;
+		this.dept_no= dept_no;
 	}
 
 
