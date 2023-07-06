@@ -12,8 +12,7 @@ import crudopemployeesystem.entity.Department;
     
     {
    
-    	Department findByEmail(String email);
-    	}
+    }
 		
 
 

@@ -32,6 +32,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 		// TODO Auto-generated method stub
 		return departmentRepository.save(department);
 	}
-
+    
+	@Override
+	public void deleteDepartmentById(Long dept_no)
+	{
+		// TODO Auto-generated method stub
+		departmentRepository.deleteById(dept_no);
+	}
 }
   

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -50,7 +51,13 @@ public class DepartmentController {
 	{
 		
 		departmentService.saveDepartment(department);
-		return "departments";
+		return "redirect:/departments";
+	}
+	
+	@GetMapping("/departments/{dept_no}/delete")
+	public String deleteDepartment(@PathVariable Long dept_no) {
+	    departmentService.deleteDepartmentById(dept_no);
+	    return "redirect:/departments";
 	}
 
 }

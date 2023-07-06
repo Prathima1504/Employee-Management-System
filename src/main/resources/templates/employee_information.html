@@ -1,0 +1,34 @@
+<!--<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Information</title>
+</head>
+<body>
+	
+	  <h1>Employee Information</h1>
+	  <div class = "container">
+		   <div class = "row">                      
+			   <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				   <div class="card-body">
+					   <form th:action="@{/employees}" th:object="${employee}" method="POST">
+    
+						    <div th:if="${employee != null}">
+						        <p>Employee ID: <span th:text="${employee.id}"></span></p>
+						        <p>Employee Title: <span th:text="${employee.title}"></span></p>
+						        <p>Employee FirstName: <span th:text="${employee.fname}"></span></p>
+						        <p>Employee LastName: <span th:text="${employee.lname}"></span></p>
+						        <p>Employee EmailID: <span th:text="${employee.email}"></span></p>
+						         Add more fields as needed 
+						    </div>
+						    <div th:unless="${employee != null}">
+						        <p>No employee found with the specified department ID and employee ID.</p>
+						    </div>
+					   </form>
+				   </div>
+			   </div>
+		   </div>
+	  </div>
+
+</body>
+</html>-->

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 import crudopemployeesystem.entity.Employee;
 import crudopemployeesystem.service.EmployeeService;
@@ -82,6 +83,13 @@ public class EmployeeController
 	    employeeService.deleteEmployeeById(id);
 	    return "redirect:/employees";
 	}
-
+    
+	/*
+	 * @PostMapping("/get_employee") public String
+	 * getEmployeeInformation(@RequestParam("dept_no") int
+	 * departmentId, @RequestParam("id") int employeeId, Model model) { Employee
+	 * employee = employeeService.getEmployeeByIds(departmentId, employeeId);
+	 * model.addAttribute("employee", employee); return "employee_information"; }
+	 */
 }
   

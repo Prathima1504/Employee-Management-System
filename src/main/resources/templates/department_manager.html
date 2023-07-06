@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/create_department}">Department Management</a>
+        <a class="nav-link" th:href="@{/departments}">Department Management</a>
       </li>
     </ul>
   </div>
@@ -29,7 +29,7 @@
 <br>
 <br>
 
- <div class="container">
+<!-- <div class="container">
 			 <div class="row">
 				 <h1>List of Departments</h1>
 			 </div>
@@ -49,6 +49,47 @@
 					 </tr>
 				 </tbody>
 			 </table>
+		 </div>-->
+		 
+		 <div class = "container">
+		   <div class = "row">                      
+			   <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card"><br><br>
+				   <h4 class ="text-center">Need Employee Information?</h4><br><br>
+				   <div class="card-body">
+					   <form th:action="@{/departments}" th:object="${department}" method="POST">
+
+						   <!--<div class="form-group">
+							   <label> Department No.</label>
+							   <input type="" name="dept_no" th:field = "*{dept_no}" class ="form-control" placeholder="Enter department no.">
+						   </div>		
+						     <div class="form-group">
+							   <label>Employee ID</label>
+							   <input type="number" name="id" th:field = "*{id}" class ="form-control" placeholder="Enter employee ID">
+						   </div>	
+						   <div class = "box-footer">
+							   <button type="submit" class="btn btn-success">Submit</button>
+						   </div>-->
+						   <div class="form-group">
+                               <label for="employeeId">Employee ID:</label>
+                               <select name="employeeId" id="employeeId" class="form-control">
+                               <option th:each="employee : ${employees}" th:value="${employee.id}" th:text="${employee.id}"></option>
+                               </select>
+                           </div>
+                           <div class="form-group">
+							    <label for="departmentId">Department ID:</label>
+							    <select name="departmentId" id="departmentId" class="form-control">
+							        <option th:each="department : ${departments}" th:value="${department.dept_no}" th:text="${department.dept_no}"></option>
+							    </select>
+                           </div>
+                           <div class = "box-footer">
+							   <button type="submit" class="btn btn-success">Submit</button>
+						   </div>
+
+						    		
+					   </form>
+				   </div>
+			   </div>
+		   </div>
 		 </div>
 
 
