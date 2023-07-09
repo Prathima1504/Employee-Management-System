@@ -37,6 +37,10 @@
 					   <form th:action="@{/employees}" th:object="${employee}" method="POST">
 
 					  <!-- <form th:action = "@{/employees}" th:object = "${employee}" method = "POST">-->
+						 <!-- <div class="form-group">
+							  <label>Department No.</label>
+							   <input type="number" name="department_id" th:field = "*{department_id}" class ="form-control" placeholder="Enter department ID">
+						  </div>-->
 						  <div class="form-group">
 							   <label> ID</label>
 							   <input type="number" name="id" th:field = "*{id}" class ="form-control" placeholder="Enter employee ID">
@@ -57,6 +61,22 @@
 							   <label> email</label>
 							   <input type="email" name="email" th:field = "*{email}" class ="form-control" placeholder="Enter email">
 						   </div>	
+						   <div class="form-group">
+							  <!-- <label> Department Name</label>
+							   <input type="text" name="emp_dept_name" th:field = "*{emp_dept_name}" class ="form-control" placeholder="Enter department name">-->
+						       <label for="departments">Choose a department:</label>
+
+									<select id="departments" name="emp_dept_name" th:field = "*{emp_dept_name}" class ="form-control" placeholder="Enter department name">
+									  <option value="Mechanical-12">Mechanical Engineering-12</option>
+									  <option value="Civil-13">Civil Engineering-13</option>
+									  <option value="Computer ">CSE-14</option>
+									  <option value="Electrical and Electronics">EEE-15</option>
+									  <option value="Information Technology ">Information Technology-16</option>
+									  <option value="Aerospace">Aerospace Engineering-17</option>
+									  <option value="Biomedical">BiomedicalEngineering-18</option>
+									</select>
+						   </div>
+						   
 						   <div class = "box-footer">
 							   <button type="submit" class="btn btn-success">Submit</button>
 						   </div>

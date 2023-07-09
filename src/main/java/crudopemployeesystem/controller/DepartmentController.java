@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import crudopemployeesystem.entity.Department;
+import crudopemployeesystem.entity.Employee;
 import crudopemployeesystem.service.DepartmentService;
 import jakarta.validation.Valid;
 
@@ -52,6 +53,27 @@ public class DepartmentController {
 		
 		departmentService.saveDepartment(department);
 		return "redirect:/departments";
+	}
+	
+	
+	@GetMapping("/departments/edit/{dept_no}")
+	public String editDepartmentForm(@PathVariable Long dept_no, Model model) 
+	{
+		model.addAttribute("department", departmentService.getDepartmentByID(dept_no));
+		return "edit_department";		
+	}
+	
+	@PostMapping("/departments/{dept_no}")
+	public String updateDepartment(@PathVariable Long dept_no, @ModelAttribute("department") Department department, Model model) {
+	   Department existingDepartment = departmentService.getDepartmentByID(dept_no);
+	   existingDepartment.setId(dept_no);
+	   existingDepartment.setDept_name(department.getDept_name());
+	   existingDepartment.setEmail(department.getEmail());
+	   
+	   
+	   //save updated employee object
+	   departmentService.updateDepartment(existingDepartment);
+	   return "redirect:/departments";
 	}
 	
 	@GetMapping("/departments/{dept_no}/delete")

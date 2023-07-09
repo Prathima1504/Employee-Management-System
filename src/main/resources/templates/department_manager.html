@@ -72,13 +72,13 @@
 						   <div class="form-group">
                                <label for="employeeId">Employee ID:</label>
                                <select name="employeeId" id="employeeId" class="form-control">
-                               <option th:each="employee : ${employees}" th:value="${employee.id}" th:text="${employee.id}"></option>
+                               <option th:each="employee : ${department_managers}" th:value="${department_ID}" th:text="${employee.id}"></option>
                                </select>
                            </div>
                            <div class="form-group">
 							    <label for="departmentId">Department ID:</label>
 							    <select name="departmentId" id="departmentId" class="form-control">
-							        <option th:each="department : ${departments}" th:value="${department.dept_no}" th:text="${department.dept_no}"></option>
+							        <option th:each="department : ${department_managers}" th:value="${employee_ID}" th:text="${department.dept_no}"></option>
 							    </select>
                            </div>
                            <div class = "box-footer">

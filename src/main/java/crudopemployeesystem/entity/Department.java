@@ -95,6 +95,12 @@ public class Department {
 	}
 
 
+	public Department save(Department department) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	/*
 	 * public Collection<Employee> employees() { return employees;

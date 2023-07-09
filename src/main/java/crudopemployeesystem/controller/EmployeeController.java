@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import crudopemployeesystem.entity.Employee;
 import crudopemployeesystem.service.EmployeeService;
@@ -43,7 +43,7 @@ public class EmployeeController
 		
 		model.addAttribute("employee", employee);
 		return "create_employee";
-		
+		 
 	}
      
 	@PostMapping("/employees")
@@ -53,6 +53,8 @@ public class EmployeeController
 		employeeService.saveEmployee(employee);
 		return "redirect:/employees";
 	}
+	
+	
 	@GetMapping("/employees/edit/{id}")
 	public String editEmployeeForm(@PathVariable Long id, Model model) 
 	{
@@ -65,31 +67,27 @@ public class EmployeeController
 	   Employee existingEmployee = employeeService.getEmployeeByID(id);
 	   existingEmployee.setId(id);
 	   existingEmployee.setFname(employee.getFname());
+	   existingEmployee.setLname(employee.getLname());
 	   existingEmployee.setEmail(employee.getEmail());
+	   existingEmployee.setEmp_dept_name(employee.getEmp_dept_name());
+	   
 	   
 	   //save updated employee object
 	   employeeService.updateEmployee(existingEmployee);
 	   return "redirect:/employees";
 	}
 	
-	//handler method to delete request
-	/*
-	 * @GetMapping("/employees/{id}") public String deleteEmployee(@PathVariable
-	 * Long id) { employeeService.deleteEmployeeById(id); return
-	 * "redirect:/employees"; }
-	 */
 	@GetMapping("/employees/{id}/delete")
 	public String deleteEmployee(@PathVariable Long id) {
 	    employeeService.deleteEmployeeById(id);
 	    return "redirect:/employees";
 	}
-    
-	/*
-	 * @PostMapping("/get_employee") public String
-	 * getEmployeeInformation(@RequestParam("dept_no") int
-	 * departmentId, @RequestParam("id") int employeeId, Model model) { Employee
-	 * employee = employeeService.getEmployeeByIds(departmentId, employeeId);
-	 * model.addAttribute("employee", employee); return "employee_information"; }
-	 */
+	
+	
+	  @PostMapping("/get_employee") 
+	  public String getEmployeeInformation(@RequestParam("dept_no") int departmentId, @RequestParam("id") int employeeId, Model model) { Employee
+	  employee = employeeService.getEmployeeByIds(departmentId, employeeId);
+	  model.addAttribute("employee", employee); return "employee_information"; }
+	 
 }
   

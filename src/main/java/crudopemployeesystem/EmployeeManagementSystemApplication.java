@@ -17,10 +17,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class EmployeeManagementSystemApplication implements CommandLineRunner{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		SpringApplication.run(EmployeeManagementSystemApplication.class, args);
 	}
-  // 	@Autowired
+    //@Autowired
 	//private EmployeeRepository employeeRepository;
 	//@Autowired
 	//private DepartmentRepository departmentRepository;
@@ -31,13 +32,14 @@ public class EmployeeManagementSystemApplication implements CommandLineRunner{
 	{
 		
 		
-	    // Employee employee1 = new Employee( "Ms", "Prathima","Boddepalli", "prathimab15@gmail.com");
-		// employeeRepository.save(employee1);
-		 
+		/*
+		 * Employee employee = new Employee("Mrs", "Hemamohan","Boddepalli",
+		 * "hema@gmail.com","Mechanical"); employeeRepository.save(employee);
+		 */
 		// Department department = new Department("IT", null);
 	    // departmentRepository.save(department);
 		    
-		
+		  
 	}
 	
 

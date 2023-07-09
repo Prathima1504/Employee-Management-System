@@ -4,8 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-//import jakarta.persistence.JoinColumn;
-//import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -29,12 +29,15 @@ public class Employee {
     @NotEmpty
 	@Email
 	private String email;
+    
+    private String emp_dept_name;
 
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name = "department_id") private Department department;
-	 */
+
+	  @ManyToOne
+	  
+	  @JoinColumn(name = "department_id")
+	  private Department department;
+	
 	//whenever we create parameterized constructor we must make sure we will also create default constructor in JPA entity
 	public Employee() {
 		//super();
@@ -42,14 +45,24 @@ public class Employee {
 	}
 
 
-	public Employee( String title, String fname, String lname, String email) {
+	public Employee(String title, String fname, String lname, String email,String emp_dept_name) {
 		super();
+
 		this.title = title;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
+		this.emp_dept_name = emp_dept_name;
 	}
+    
 
+	/*
+	 * public Long getDepartmentId() { if (department != null) { return
+	 * department.getDept_no(); } return null; }
+	 */
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
 	public Long getId() {
 		return id;
@@ -99,13 +112,18 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
-	/*
-	 * @Override public String toString() { return "Employee [id=" + id + ", name="
-	 * + name + ", email=" + email + "]"; }
-	 */
+
+	public String getEmp_dept_name() {
+		return emp_dept_name;
+	}
+
+
+	public void setEmp_dept_name(String emp_dept_name) {
+		this.emp_dept_name = emp_dept_name;
+	}
+    
+	
 }
 	
 	

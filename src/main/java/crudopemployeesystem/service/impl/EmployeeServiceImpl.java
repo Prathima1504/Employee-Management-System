@@ -49,16 +49,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		employeeRepository.deleteById(id);
 	}
+
+	@Override
+	public Employee getEmployeeByIds(int departmentId, int employeeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	/*
-	 * @Override public Employee getEmployeeByIds(int departmentId, int employeeId)
-	 * { // Implement your logic to retrieve the employee information from the
-	 * database // using the provided departmentId and employeeId
-	 * 
-	 * // For example, you can call a method on the employeeRepository (a data
-	 * access object) to fetch the employee Employee employee =
-	 * employeeRepository.findByDepartmentIdAndEmployeeId(departmentId, employeeId);
-	 * 
-	 * // Return the retrieved employee return employee; }
-	 */
+
 }
