@@ -1,6 +1,4 @@
 
-// Entry point of this project
-
 package crudopemployeesystem;
 
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import crudopemployeesystem.repository.DepartmentRepository;
 //import crudopemployeesystem.repository.EmployeeRepository;
 
+
+//enables various Spring Boot features. 
 @SpringBootApplication
+
+
+/*
+ * CommandLineRunner interface is used  to run code when the application starts.
+ * class must provide an implementation for the "run" method
+ */
 public class EmployeeManagementSystemApplication implements CommandLineRunner{
 
 	public static void main(String[] args)
@@ -28,6 +34,7 @@ public class EmployeeManagementSystemApplication implements CommandLineRunner{
 	 
 
 	@Override
+	//The "run" method is where you would place the code that needs to be executed when the application starts.
 	public void run(String... args) throws Exception
 	{
 		

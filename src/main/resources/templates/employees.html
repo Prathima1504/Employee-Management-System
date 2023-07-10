@@ -8,49 +8,44 @@
 </head>
 <body>
 	
-	<nav class="navbar navbar-expand-md bg-primary navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Employee Management system</a>
-
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/employees}">Employee Management</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/departments}">Department Management</a>
-      </li>
-     
-    </ul>
-  </div>
-</nav>
+		<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+		     <!-- Brand -->
+		     <a class="navbar-brand" href="#">Employee Management system</a>
+		
+			  <!-- Toggler/collapsibe Button -->
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+		
+			  <!-- Navbar links -->
+			  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			    <ul class="navbar-nav">
+			      <li class="nav-item">
+			        <a class="nav-link" th:href="@{/employees}">Employee Management</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" th:href="@{/departments}">Department Management</a>
+			      </li>
+			     
+			    </ul>
+			  </div>
+		</nav>
 
          <div class="container">
 			 <div class="row">
 				 <h1>List of Employees</h1>
 			 </div>
 			 <div class = "row">
-				  <div class="col-lg-3">
+				    <div class="col-lg-3">
 						<a th:href ="@{/departments/new}" class = "btn btn-primary btn-sm mb-3">Add Department</a>
 					</div>
 				    <div class="col-lg-3">
 						<a th:href ="@{/employees/new}" class = "btn btn-primary btn-sm mb-3">Add Employee</a>
 					</div>
-					 <div class="col-lg-3">
-						<a th:href ="@{/department_manager/new}" class = "btn btn-primary btn-sm mb-3">click here to need employee information</a>
-					</div>
-					
 			 </div>
 			 <table class="table table-stripped table-bordered table-hover">
 			     <thead class="table-dark">
 					 <tr>
-						
 						 <th> Employee ID</th>
 						 <th>Title</th>
 						 <th>First Name</th>
@@ -65,11 +60,11 @@
 						
 						 <td th:text = "${employee.id}"></td>
 						 <td th:text = "${employee.title}"></td>
-						  <td th:text = "${employee.fname}"></td>
-						  <td th:text = "${employee.lname}"></td>
-						   <td th:text = "${employee.email}"></td>
-						    <td th:text = "${employee.emp_dept_name}"></td>	 
-						   <td>
+						 <td th:text = "${employee.fname}"></td>
+						 <td th:text = "${employee.lname}"></td>
+						 <td th:text = "${employee.email}"></td>
+						 <td th:text = "${employee.emp_dept_name}"></td>	 
+						 <td>
 							   <a th:href = "@{/employees/edit/{id}(id=${employee.id})}"
 							   class = "btn btn-primary">Update</a>
 							   
@@ -80,7 +75,7 @@
                                 class="btn btn-danger" 
                                 onclick="return confirm('Are you sure you want to delete this employee?')">Delete</a>
 
-						   </td>
+						  </td>
 					 </tr>
 				 </tbody>
 			 </table>
